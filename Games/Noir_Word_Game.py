@@ -1,7 +1,7 @@
 #Statement 1 / Intro
 print("For choice decisions, type in the corresponding number")
 
-#Basic Loop 1
+#Basic Loop 1 
 choice = 0
 while True:
     choice = input("""Do you understand?
