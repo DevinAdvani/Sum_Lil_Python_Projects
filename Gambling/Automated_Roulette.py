@@ -34,4 +34,3 @@ MONEY: £{money}""")
         round0 += 1
         print("YOU LOST")
         con_loss += 1
-        

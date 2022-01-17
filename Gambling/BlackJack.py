@@ -86,7 +86,7 @@ while money > 0:
             print("YOU LOSE")
             bet = 0
             break
-            
+
     #Dealer Playing
     hit_count = 0
     print(f"DEALER HAND: {dealer}")
@@ -135,8 +135,3 @@ while money > 0:
                 cards.append('Q')
                 cards.append('K')
                 cards.append('A')
-
-
-
-
-

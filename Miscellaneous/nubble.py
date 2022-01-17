@@ -1,3 +1,6 @@
+#Credit for idea goes to me
+#Credit for actually building goes to Ryan
+
 # Imporing the functions permutations and combinations
 
 from itertools import permutations, combinations
