@@ -55,7 +55,7 @@ if G < 0:
 
 #x and y range
 axes.set_xlim([0,(-DI/PED)+1])
-axes.set_ylim([0,DI+1])
+axes.set_ylim([0,(((PES * NQ)+SI)+1)])
 
 #Showing plot
 plt.show()
