@@ -10,19 +10,23 @@ Q = (SI-DI)/(PED-PES)
 P = (PED * Q) + DI
 
 #Calculating New Q and P
-
+NQ = ((SI+G)-DI)/(PED-PES)
+NP = (PED * NQ) + DI
 
 #Printing information
-print(f'QUANTITY = {Q} UNITS')
-print(f"PRICE = £{P}")
+print(" ")
+print(f'ORIGINAL QUANTITY = {Q} UNITS')
+print(f"ORIGINAL PRICE = £{P}")
 print(f"ORIGINAL TOTAL REVENUE FOR FIRM= £{P*Q}")
-print(f"NEW TOTAL REVENUE FOR FIRM= £")
+print(" ")
+print(f'NEW QUANTITY = {NQ} UNITS')
+print(f"NEW PRICE = £{NP}")
 if G > 0:
-    print(f"TAX REVENUE FOR GOVERNMENT= £")#need to fix
-    print(f"NEW TOTAL REVENUE FOR FIRM= £{P*Q}")#need to fix
+    print(f"TAX REVENUE FOR GOVERNMENT= £{((NQ * NP)-(NQ*((NP)-(G))))}")#need to fix
+    print(f"NEW TOTAL REVENUE FOR FIRM= £{NQ*((NP)-(G))}")#need to fix
 else:
-    print(f"SUBSIDY SPENDING BY GOVERNMENT= £")#need to fix
-    print(f"NEW TOTAL REVENUE FOR FIRM= £{P*Q}")#need to fix
+    print(f"SUBSIDY SPENDING BY GOVERNMENT= £{((NQ*(NP-G))-(NQ*NP))}")#need to fix
+    print(f"NEW TOTAL REVENUE FOR FIRM= £{NP*NQ}")#need to fix
 
 #Idk what these functions do, I copied the internet
 fig= plt.figure()
@@ -39,6 +43,15 @@ axes.hlines(y=P, xmin=0, xmax=Q, linestyles = '--', colors = 'black')
 axes.vlines(x=Q, ymin=0, ymax=P, linestyles = '--', colors = 'black')
 
 #New Price and Quantity
+axes.hlines(y=NP, xmin=0, xmax=NQ, linestyles = '--', colors = 'black')
+axes.vlines(x=NQ, ymin=0, ymax=NP, linestyles = '--', colors = 'black')
+
+#Plotting Tax/Subsidy Line
+axes.hlines(y=NP-G, xmin=0, xmax=NQ, linestyles = '--', colors = 'black')
+
+#Plotting Subsidy Extension
+if G < 0:
+    axes.vlines(x=NQ, ymin=0, ymax=((PES * NQ)+SI), linestyles = '--', colors = 'black')
 
 #x and y range
 axes.set_xlim([0,(-DI/PED)+1])
