@@ -31,5 +31,9 @@ axes.vlines(x=Q, ymin=0, ymax=P, linestyles = '--', colors = 'black')
 axes.set_xlim([0,(-DI/PED)+1])
 axes.set_ylim([0,DI+1])
 
+#Axis Label
+plt.xlabel("Quantity")
+plt.ylabel("Price")
+
 #Showing plot
 plt.show()

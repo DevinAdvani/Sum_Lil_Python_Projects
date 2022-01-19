@@ -55,7 +55,11 @@ if G < 0:
 
 #x and y range
 axes.set_xlim([0,(-DI/PED)+1])
-axes.set_ylim([0,(((PES * NQ)+SI)+1)])
+axes.set_ylim([0,(((PES * NQ)+SI)+abs(G)+1)])
+
+#Axis Label
+plt.xlabel("Quantity")
+plt.ylabel("Price")
 
 #Showing plot
 plt.show()
