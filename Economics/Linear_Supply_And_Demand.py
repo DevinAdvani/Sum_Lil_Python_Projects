@@ -1,3 +1,5 @@
+#Other Possible Projects could be Externalities, Maximum/Minimum Price, Tariffs
+
 #Imports
 import matplotlib.pyplot as plt
 import numpy as np

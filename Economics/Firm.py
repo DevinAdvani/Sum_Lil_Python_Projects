@@ -45,7 +45,6 @@ axes.hlines(y=MRMCY, xmin=0, xmax=MRMCX, linestyles = '--', colors = 'black')
 axes.vlines(x=MRMCX, ymin=0, ymax=MRMCY, linestyles = '--', colors = 'black')#Slightly Off But Fuck It
 axes.hlines(y=MRMCC, xmin=0, xmax=MRMCX, linestyles = '--', colors = 'black')
 
-
 #x and y range
 axes.set_xlim([0,(-DI/PED)+1])
 axes.set_ylim([0,DI+1])
