@@ -34,9 +34,9 @@ axes= fig.add_axes([0.1,0.1,0.8,0.8])
 x= np.arange(0,100)
 
 #Plotting Supply,Demand and Altered Supply
-axes.plot(x,((PES * x)+ SI))
-axes.plot(x,((PED * x)+ DI))
-axes.plot(x,((PES * x)+ SI + G))
+axes.plot(x,((PES * x)+ SI),label="Supply")
+axes.plot(x,((PED * x)+ DI),label="Demand")
+axes.plot(x,((PES * x)+ SI + G),label="Altered Supply")
 
 #Plotting Price and Quantity
 axes.hlines(y=P, xmin=0, xmax=Q, linestyles = '--', colors = 'black')
@@ -60,6 +60,7 @@ axes.set_ylim([0,(((PES * NQ)+SI)+abs(G)+1)])
 #Axis Label
 plt.xlabel("Quantity")
 plt.ylabel("Price")
+plt.legend(loc='upper center')
 
 #Showing plot
 plt.show()
