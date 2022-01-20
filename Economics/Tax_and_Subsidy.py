@@ -36,7 +36,10 @@ x= np.arange(0,100)
 #Plotting Supply,Demand and Altered Supply
 axes.plot(x,((PES * x)+ SI),label="Supply")
 axes.plot(x,((PED * x)+ DI),label="Demand")
-axes.plot(x,((PES * x)+ SI + G),label="Altered Supply")
+if G > 0:
+    axes.plot(x,((PES * x)+ SI + G),label="Supply + Tax")
+else:
+    axes.plot(x,((PES * x)+ SI + G),label="Supply + Subsidy")
 
 #Plotting Price and Quantity
 axes.hlines(y=P, xmin=0, xmax=Q, linestyles = '--', colors = 'black')
