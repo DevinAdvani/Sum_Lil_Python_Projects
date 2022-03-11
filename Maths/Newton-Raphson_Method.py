@@ -3,9 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
 
-#Function
+#Function and other inputs
 def fun(x):
     return x**2 - 2
+repeats = 100
+lower_bound = -100
+upper_bound = 100
 
 #Derivative
 def d_fun(x):
@@ -19,17 +22,18 @@ def NRM(x):
 
 #Repeated Newton-Raphson Method
 def RNRM(x):
-    for i in range(0,100):
+    for i in range(0,repeats):
         x = NRM(x)
     return x
 
 #X and Y values dictionnary
 x = []
-for i in range(-100,100):
+for i in range(lower_bound,upper_bound):
     x.append(i)
 y = []
-for i in range(-100,100):
+for i in range(lower_bound,upper_bound):
     y.append(RNRM(i))
+
 #Sketch
 plt.plot(x,y)
 plt.show()
