@@ -1,29 +1,35 @@
 #imports
 import numpy as np
 import matplotlib.pyplot as plt
+from sympy import *
 
-#equation, range and step
-equation = input("EQUATION: ")
-first = input("FIRST NUMBER: ")
-final = input("FINAL NUMBER: ")
-step = input("STEP: ")
+#Function
+def fun(x):
+    return x**2 - 2
 
-#sketch equation
-x = np.linspace(-100, 100, 100)
-y = eval(equation)
-fig = plt.figure(figsize = (10, 5))
-plt.plot(x, y)
+#Derivative
+def d_fun(x):
+    h = 1e-5
+    return (fun(x+h)-fun(x-h))/(2*h)
+
+#Newton-Raphson Method
+def NRM(x):
+    x = x - (fun(x)/d_fun(x)) if d_fun(x) != 0 else 0
+    return x
+
+#Repeated Newton-Raphson Method
+def RNRM(x):
+    for i in range(0,100):
+        x = NRM(x)
+    return x
+
+#X and Y values dictionnary
+x = []
+for i in range(-100,100):
+    x.append(i)
+y = []
+for i in range(-100,100):
+    y.append(RNRM(i))
+#Sketch
+plt.plot(x,y)
 plt.show()
-
-#differentiate and repeat and produce
-#sketch graphs
-
-x = 1
-
-
-equation = ('x**2')
-
-for i in range(0,100):
-    x += 1
-    e = eval(equation)
-    print(e)
