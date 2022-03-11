@@ -1,14 +1,19 @@
+#This was basically the concept of which root would you calculate depending upon the initial value placed into the calculator with the Newton-Raphson Method
+
 #imports
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
 
+#Roots to the equation are
+
 #Function and other inputs
 def fun(x):
-    return x**2 - 2
+    return (x - 1)*(x - 2)*(x - 3)*(x - 4)
 repeats = 100
-lower_bound = -100
-upper_bound = 100
+lower_bound = 2.37730
+upper_bound = 2.37807
+step = 0.000001
 
 #Derivative
 def d_fun(x):
@@ -28,11 +33,15 @@ def RNRM(x):
 
 #X and Y values dictionnary
 x = []
-for i in range(lower_bound,upper_bound):
-    x.append(i)
 y = []
-for i in range(lower_bound,upper_bound):
-    y.append(RNRM(i))
+N = lower_bound
+while N < upper_bound:
+    x.append(N)
+    N += step
+N = lower_bound
+while N < upper_bound:
+    y.append(RNRM(N))
+    N += step
 
 #Sketch
 plt.plot(x,y)
