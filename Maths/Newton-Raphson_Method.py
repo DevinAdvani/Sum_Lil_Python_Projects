@@ -9,11 +9,12 @@ from sympy import *
 
 #Function and other inputs
 def fun(x):
-    return (x - 1)*(x - 2)*(x - 3)*(x - 4)
+    return (x-1)*(x-2)*(x-3)*(x-4)
+
 repeats = 100
-lower_bound = 2.37730
-upper_bound = 2.37807
-step = 0.000001
+lower_bound = -20
+upper_bound = 20
+step = 0.1
 
 #Derivative
 def d_fun(x):
