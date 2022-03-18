@@ -1,6 +1,6 @@
 import math
 
-#copied function that basically turns a character into binary 
+#copied function that basically turns a character into binary
 def toBinary(a):
   l,m=[],[]
   for i in a:
