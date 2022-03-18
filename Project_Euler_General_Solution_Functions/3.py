@@ -16,4 +16,3 @@ def f(x): #enter number to find the largest prime factor
                 return max(list)
 
 print(f(123456789))
-#can find the first three but not the final one so just a minor bug
