@@ -23,18 +23,18 @@ Find
 
 . Give your answer rounded to  digits after the decimal point.
 '''
-def p(n):
+def p(n): #THIS WORKS
     x = 1
     while True:
         x += 1
         if n % x == 0:
             return x
 
-def a(n):
+def a(n): # THIS DOESN'T WORK BECAUSE THE COMPUTER CANT COMPUTER HIGH DIGITS
     y = n
     while True:
         y -= 1
-        if n/(p(n)**y) == round(n/(p(n)**y)):
+        if rnd(n/(p(n)**y) == n/(p(n)**y:
             return y
 
 def f(k,n):
@@ -46,4 +46,6 @@ def fk(K,N):#let N tend to infinity
         SUM += f(K,i)
     return (1/N)*(SUM)
 
-print(fk(1,9999))
+print(a(2011))
+
+#IDK how to do this because numbers get too big for computer to process properly
