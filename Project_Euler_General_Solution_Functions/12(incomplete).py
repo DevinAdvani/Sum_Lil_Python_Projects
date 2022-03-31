@@ -4,7 +4,7 @@ def f(x):
         y += i
     return y
 
-f(5)
+print(f(5))
 
 def g(x):
     primes = []

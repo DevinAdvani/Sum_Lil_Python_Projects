@@ -26,3 +26,18 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 '''
+
+def Convert(string):
+    li = list(string.split(" "))
+    return li
+
+def f(x):#just put in two digit numbers with a space between them
+    y = x.replace(" ","")#need to remove spaces
+    length = len(y)/2#then count length and divide by two
+    matrix_length = length**0.5#then you should get a square number and the length
+    z = Convert(x)#then create it so that the first 20 numbers go into a list
+    a = []
+    
+    #then these are all compiled into a matrix
+    #then for each coordinate, the diagonal is calculated with the errors removed
+    #calculate product and store ina separate list.
