@@ -11,8 +11,10 @@ def PC(a):
         return False
 
 N = 1000000000000
-
+'''
 while True:
     N += 1
     if PC(N) == True:
         print(N)
+'''
+print(PC(19))
