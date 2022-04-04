@@ -63,6 +63,8 @@ def PG():#prime generator below 100
             l.append(i)
     return l
 
-def DG500():#generator of numbers with over 500 divisors in size order
-    list = []
-    for
+def FTN():#converting the concept of a list of factors into the actual number
+    n = 1
+    for i in range(0,25):
+        n *= PG()[i] ** factors[i]
+    return n
