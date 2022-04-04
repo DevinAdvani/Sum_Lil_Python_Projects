@@ -17,7 +17,27 @@ def PF(x):
 
 l = []
 
-for a in range(2,21):
-    l.append(PF(a))
+for i in range(2,21):
+    l.append(PF(i))
 
-print(l)
+factors = []
+
+n = 0
+for a in range(2,20):
+    for i in range(0,19):
+        if l[i].count(a) > n:
+            n = l[i].count(a)
+    factors.append(n)
+    n = 0
+
+c = []
+
+for i in range(2,20):
+    c.append(i)
+
+final = 1
+
+for a in range(0,18):
+    final *= (c[a]**factors[a])
+
+print(final)
