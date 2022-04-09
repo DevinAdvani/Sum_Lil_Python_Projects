@@ -31,18 +31,22 @@ d = {
 1000 : 'thousand'
 }
 
-def STW(x):#symbol to word count
-    if x < 20 or x == 1000:
-        return len(str(d[x]))
+def STW(x):#need to convert to physical words
+    if x <= 20:
+        return d[x]
     elif len(str(x)) == 2:
-        return len(d[int(str(x)[1])]) + len(d[int(str(x)[0] + '0')])
-    elif x == 100 or 200 or 300 or 400 or 500 or 600 or 700 or 800 or 900:
-        return len(d[int(str(x)[0])]) + d[100]
+        a = d[int(str(x)[0] + '0')]
+        b = d[int(str(x)[1])]
+        return a + b
     elif len(str(x)) == 3:
-        return len(d[int(str(x)[2])]) + len(d[int(str(x)[1] + '0')]) + d[100] + len(d[int(str(x)[0])]) + 3#and
+        a = d[int(str(x)[0] + '00')]
+        b = d[int(str(x)[1] + '0')]
+        c = d[int(str(x)[2])]
+        return a + b + c
 
 
-#just painful
 
 
-print(STW(100))
+
+for i in range(1,1000):
+    print(STW(i))

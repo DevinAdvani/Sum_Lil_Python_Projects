@@ -8,7 +8,7 @@ def f(x):#where x is x by x grid
     return len(set(list(itertools.permutations(single))))
 
 
-for i in range(0,20):
-    print(i,f(i))
+
 
 #multiple of two as paths are reflections
+print(f(6))

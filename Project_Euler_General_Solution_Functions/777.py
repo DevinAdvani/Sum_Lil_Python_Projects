@@ -3,14 +3,28 @@ import math
 
 x = []
 y = []
+c = []
+t = []
 xic = []
 yic = []
 n = 5
 a = 4
 b = 7
-for t in range(0,int(360*n + 1)):
-    x.append(math.cos(a*t*(1/n)*math.pi*(1/180)))
-    y.append(math.cos(b*(((t/n)*(math.pi/180))-(math.pi/10))))
+
+xstart = -1
+step = 0.01
+while xstart < 1:
+    c.append((1/a)*math.acos(xstart))
+    xstart += step
+
+t = sorted(c)
+
+for i in range(0,len(t)):
+    x.append(math.cos(a*t[i]))
+    y.append(math.cos(b*(t[i]-(math.pi/10))))
+
+
+
 
 def plot(): # plots the function
         plt.scatter(x,y)
@@ -40,6 +54,3 @@ def d():
                 xic.append(round(xintersect(x[e],y[e],x[e+1],y[e+1],x[f],y[f],x[f+1],y[f+1]),2))
                 #yic.append(round(m(x[e],y[e],x[e+1],y[e+1])*xintersect(x[e],y[e],x[e+1],y[e+1],x[f],y[f],x[f+1],y[f+1])+c(x[e],y[e],x[e+1],y[e+1])),2)
                 print(set(xic))
-#d()
-plot()
-#need still getting too many so need to double check every piece of code
