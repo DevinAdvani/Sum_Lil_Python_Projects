@@ -33,20 +33,22 @@ d = {
 
 def STW(x):#need to convert to physical words
     if x <= 20:
-        return d[x]
+        a = d[x]
+        return a
     elif len(str(x)) == 2:
         a = d[int(str(x)[0] + '0')]
         b = d[int(str(x)[1])]
         return a + b
     elif len(str(x)) == 3:
-        a = d[int(str(x)[0] + '00')]
-        b = d[int(str(x)[1] + '0')]
-        c = d[int(str(x)[2])]
-        return a + b + c
-
-
-
-
+        a = d[int(str(x)[0])]
+        b = d[int(str(x)[0] + '00')]
+        c = d[int(str(x)[1] + '0')]
+        e = d[int(str(x)[2])]
+        if int(str(x)[1]) == 0 and int(str(x)[2]) == 0:
+            f = ''
+        else:
+            f = 'and'
+        return a + b + f + c + e
 
 for i in range(1,1000):
     print(STW(i))

@@ -8,11 +8,6 @@ def PC(a):
     else:
         return False
 
-N = 1000000000000
-'''
-while True:
-    N += 1
-    if PC(N) == True:
-        print(N)
-'''
-print(PC(19))
+#assemble all the different permutations of numbers for different digit lengths
+#then do a prime checker
+digits = [1,2,3,4,5,6,7,8,9]
