@@ -8,6 +8,15 @@ def PC(a):
     else:
         return False
 
-#assemble all the different permutations of numbers for different digit lengths
-#then do a prime checker
-digits = [1,2,3,4,5,6,7,8,9]
+def C(x):#circulate
+    list = []
+    for i in range(0,len(str(x))):
+        list.append(int(str(x)[i:]+str(x)[:i]))
+    return(list)
+
+set = []
+
+for i in range(1,1000001):
+    if PC(i):
+        print(i)
+        set.append(i)
