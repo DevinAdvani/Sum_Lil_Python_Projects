@@ -14,9 +14,18 @@ def C(x):#circulate
         list.append(int(str(x)[i:]+str(x)[:i]))
     return(list)
 
-set = []
+def f(b):
+    list = C(b)
+    for c in list:
+        if not(PC(c)):
+            return False
+    return True
 
-for i in range(1,1000001):
-    if PC(i):
-        print(i)
+set = [2]
+
+for i in range(3,1000000,2):
+    print(i)
+    if f(i):
         set.append(i)
+
+print(len(set))

@@ -9,4 +9,32 @@ Find the sum of all the positive integers which cannot be written as the sum of 
 '''
 #abundant number generator
 #sum calculator
-def d(x):
+def DS(x):#Divisor Sum
+    l = []
+    for i in range(1,round(x/2)+1):
+        if x % i == 0:
+            l.append(i)
+    return(sum(l))
+
+def AC(x):#Abundant Checker
+    if DS(x) > x:
+        return True
+    else:
+        return False
+
+Anums = []
+i = 0
+while len(Anums) != 100000:
+    print(len(Anums))
+    i += 1
+    if AC(i):
+        Anums.append(i)
+
+list = []
+
+for a in range(0,100000):
+    print(a)
+    for b in range(0,100000):
+        list.append(Anums[a] + Anums[b])
+
+print(sorted(set(list)))

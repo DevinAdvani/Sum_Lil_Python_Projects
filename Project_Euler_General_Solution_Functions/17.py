@@ -21,7 +21,7 @@ d = {
 19 : 'nineteen',
 20 : 'twenty',
 30 : 'thirty',
-40 : 'fourty',
+40 : 'forty',#fucking americans
 50 : 'fifty',
 60 : 'sixty',
 70 : 'seventy',
@@ -40,15 +40,22 @@ def STW(x):#need to convert to physical words
         b = d[int(str(x)[1])]
         return a + b
     elif len(str(x)) == 3:
-        a = d[int(str(x)[0])]
-        b = d[int(str(x)[0] + '00')]
-        c = d[int(str(x)[1] + '0')]
-        e = d[int(str(x)[2])]
-        if int(str(x)[1]) == 0 and int(str(x)[2]) == 0:
-            f = ''
+        if int(str(x)[1:3]) <= 20:
+            a = d[int(str(x)[1:3])]
         else:
-            f = 'and'
-        return a + b + f + c + e
+            a = d[int(str(x)[1] + '0')] + d[int(str(x)[2])]
+        c = d[int(str(x)[0])]
+        if x % 100:
+            e = 'and'
+        else:
+            e = ''
+        return c + 'hundred' + e + a
+    elif x == 1000:
+        return 'onethousand'
 
-for i in range(1,1000):
-    print(STW(i))
+count = 0
+
+for i in range(1,1001):
+    count += len(STW(i))
+
+print(count)
