@@ -22,19 +22,22 @@ def AC(x):#Abundant Checker
     else:
         return False
 
-Anums = []
+Anums = [2]
 i = 0
-while len(Anums) != 100000:
-    print(len(Anums))
+while Anums[-1] < 28123:
+    print(Anums[-1])
     i += 1
     if AC(i):
         Anums.append(i)
 
+print(Anums)
+'''
 list = []
 
-for a in range(0,100000):
+for a in range(0,28123):
     print(a)
-    for b in range(0,100000):
+    for b in range(0,28123):
         list.append(Anums[a] + Anums[b])
 
-print(sorted(set(list)))
+print(sum(set(list)))
+'''

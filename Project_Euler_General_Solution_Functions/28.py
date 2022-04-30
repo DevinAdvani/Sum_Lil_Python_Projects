@@ -1,17 +1,9 @@
-import numpy as np
-l = []
-for i in range(0,5):
-    l.append(0)
-matrix = []
-for i in range(0,5):
-    matrix.append(l)
+seq = [1]
+step = 0
+while seq[-1] != 1001**2:
+    step += 2
+    for i in range(0,4):
+        seq.append(seq[-1]+step)
+    print(seq[-1])
 
-
-
-A = np.matrix(matrix)
-A[0,0] = 5
-
-B = [0,0]
-count = 25
-
-#just painful idk
+print(sum(seq))

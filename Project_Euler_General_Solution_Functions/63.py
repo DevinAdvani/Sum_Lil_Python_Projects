@@ -1,13 +1,8 @@
-def f(x):
-    return round(x**(1/len(str(x))),14)
+count = 0
+for i in range(1,100):
+    for j in range(1,100):
+        if len(str(i**j)) == j:
+            #print(i**j,i,j)
+            count += 1
 
-sum = 0
-n = 0
-while True:
-    n += 1
-    if f(n) == int(f(n)):
-        sum += 1
-        print(n)
-    #print(sum)
-
-#need to reverse engineer it for integer to a certain power
+print(count)

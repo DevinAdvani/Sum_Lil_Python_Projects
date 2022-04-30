@@ -36,7 +36,7 @@ h = []
 for x in (0,len(g)):
     n = ''
     for i in (0,len(g[1])):
-        n += str(g[x])
+        n += str(g[len(g)-1])
     h.append(n)
 
 print(h)

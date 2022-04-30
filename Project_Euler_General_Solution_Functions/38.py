@@ -20,3 +20,5 @@ for c in range(1,1000):
             print(list)
 
 print(list)
+
+#IDK i can do it but idk im doing something wrong
