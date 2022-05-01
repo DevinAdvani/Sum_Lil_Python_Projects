@@ -13,4 +13,3 @@ def PC(a):
         return False
 
 print(PC(123456789))
-itertools and permutations
