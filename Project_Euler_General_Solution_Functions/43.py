@@ -1,5 +1,8 @@
-from itertools import combinations
+primes = [2,3,5,7,11,13,17]
+list= []
 
-L = ['1','2','3','4','5','6','7','8','9','0']
-for i in combinations(L,10):
-    print(i)
+for i in range(100,1000):
+    if i % 2 == 0 and str(i)[0] != str(i)[1] and str(i)[1] != str(i)[2] and str(i)[0] != str(i)[2]:
+        list.append(i)
+
+print(list)
