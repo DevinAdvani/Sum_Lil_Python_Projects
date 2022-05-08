@@ -1,5 +1,5 @@
 import itertools
-def f(code,login):
+def f(code,login):#LOGIN IS THREE DIGITS
     code = str(code)
     login = str(login)
     try:
@@ -24,19 +24,24 @@ keylog = [319,680,180,690,129,620,762,689,762,318,368,710,720,710,629,168,160,68
 lol = []
 for i in keylog:
     for j in range(0,3):
-        lol.append(int(str(i)[j]))
+        lol.append(str(i)[j])
 
-f = list(set(lol))
+p = list(set(lol))
 
-g = list(itertools.permutations(list(f)))
-print(g[1][7])
+g = list(itertools.permutations(list(p)))
+
+#need to turn g into a code
+
+e = []
+for i in g:
+    e.append(str(''.join(i)))
 
 
-h = []
-for x in (0,len(g)):
-    n = ''
-    for i in (0,len(g[1])):
-        n += str(g[len(g)-1])
-    h.append(n)
-
-print(h)
+for i in range(0,len(e)):
+    check = 0
+    for j in range(0,len(keylog)):
+        if not f(e[i],keylog[j]):
+            check += 1
+    if check == 0:
+        print(e[i])
+        break
