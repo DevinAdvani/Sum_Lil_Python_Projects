@@ -10,12 +10,16 @@ def PC(x):#Pentagonal Checker
 
 D = 100000000
 
-for i in range(1,50000):
+k = 100000
+
+for i in range(1,k):
     print(i)
     print(D)
-    for j in range(i+1,50000):#i is less than j
+    for j in range(i+1,k):#i is less than j
         if PC(PG(i)+PG(j)):
-            if PC(PG(j)-PG(i)):
-                if PC(PG(j)-PG(i)) < D:
-                    D = PC(PG(j)-PG(i))
+            #if PC(PG(j)-PG(i)):
+            #if PC(PG(j)-PG(i)) < D:
+                D = PC(PG(j)-PG(i))
+                if D == True:
+                    break
 print(D)

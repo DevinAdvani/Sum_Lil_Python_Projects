@@ -1,25 +1,31 @@
-def f(x):
-    sum = 0
-    for i in range(0,len(str(x))):
-        sum += (int(str(x)[i:i+1]))**2
-    return sum
+eightynine = []
+one = []
+numbers = []
 
-def g(n):
-    while True:
-        n = f(n)
-        if n == 1 or n == 89:
-            break
-    if n == 89:
-        return True
-    else:
-        return False
-
-num = 0
 for i in range(1,10000000):
-    print(i)
-    if g(i):
-        num += 1
+    numbers.append(i)
 
-print(num)
+def f(x):
+    y = str(x)
+    n = 0
+    for i in range(0,len(y)):
+        n += int(y[i]) ** 2
+    return n
 
-#create a list of numbers instead that go to 89 if touched, massive list should be more efficient
+for a in numbers:
+    print(a)
+    sequence = [a]
+    p = a
+    while True:
+        p = f(p)
+        sequence.append(p)
+        if p == 89 or p == 1 or p in eightynine or p in one:
+            break
+    if p == 89 or p in eightynine:
+        for b in sequence:
+            eightynine.append(b)
+    if p == 1 or p in one:
+        for b in sequence:
+            one.append(b)
+
+print(len(eightynine))
